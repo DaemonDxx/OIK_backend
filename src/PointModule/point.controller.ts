@@ -1,6 +1,7 @@
 import {Controller, Post, Res, Body, NotFoundException, HttpStatus, Get} from '@nestjs/common';
 import {CreatePointDTO} from './point.dto';
 import {PointService} from './point.service';
+import { FilterDto } from './filter.dto';
 
 @Controller()
 export class PointController {
@@ -16,6 +17,15 @@ export class PointController {
                 message: 'Point is created',
                 point,
             });
+        }
+
+        @Get('/Point')
+        async getPointsInDays(@Res() res, @Body() filter: FilterDto) {
+          const arrDate = filter.days.split(';').map((e) => new Date(e));
+          const points = await this.pointService.getPoints(arrDate);
+          res.status(HttpStatus.OK).json({
+            points,
+          });
         }
 
 }

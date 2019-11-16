@@ -15,7 +15,7 @@ export class TelephoneMessageService {
   async createTMessage(createTMessageDTO: CreateTMessageDto): Promise<Point> {
     const tMessage = await this.tMessageModel(createTMessageDTO).save();
     const point = await this.pointService.saveTMessageInPoint(tMessage);
-    return point;
+    return point.tMessage;
   }
 
 }

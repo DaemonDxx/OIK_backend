@@ -9,7 +9,7 @@ export interface Point extends Document {
     readonly address: string;
     readonly contractNumber: string;
     readonly area: string;
-    readonly date: string;
+    readonly date: Date;
     readonly deviceNumber: string;
     readonly capacity: number;
     readonly lastIndication: string;

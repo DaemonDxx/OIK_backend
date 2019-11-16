@@ -8,10 +8,10 @@ export class TelephoneMessageController {
 
   @Post('/TelephoneMessage')
   async createTMessage(@Res() res, @Body() tMessageDTO: CreateTMessageDto) {
-      const point = await this.tMessageSerive.createTMessage(tMessageDTO);
+      const tMessage = await this.tMessageSerive.createTMessage(tMessageDTO);
       return res.status(HttpStatus.OK).json({
         message: 'Телефонограмма создана',
-        tMessage: point.tMessage,
+        tMessage,
       });
   }
 

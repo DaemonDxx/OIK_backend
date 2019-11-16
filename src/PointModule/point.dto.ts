@@ -1,6 +1,6 @@
 // TODO: - Добавить проверку типов
 //       - Добавить проверку на пустые поля
-
+//       - Добавить поле описание объекта
 export class CreatePointDTO {
 
     readonly pointNumber: string;

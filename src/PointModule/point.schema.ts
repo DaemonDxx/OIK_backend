@@ -11,7 +11,7 @@ export const PointSchema = new mongoose.Schema({
     address: String,
     contractNumber: String,
     area: String,
-    date: String,
+    date: Date,
     deviceNumber: String,
     capacity: Number,
     lastIndication: String,
