@@ -6,6 +6,8 @@ export class CreateTMessageDto {
   readonly fromPhone: string;
   readonly toPhone: string;
   readonly number: number;
-  readonly pointId: any;
+  readonly point: any;
+  readonly status: boolean;
+  readonly comment: string;
 
 }

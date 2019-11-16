@@ -16,7 +16,5 @@ export const PointSchema = new mongoose.Schema({
     capacity: Number,
     lastIndication: String,
     tMessage: {type: mongoose.Types.ObjectId, ref: 'TMessage'},
-    status: {type: Boolean, default: false},
-    comment: String,
 
 });
