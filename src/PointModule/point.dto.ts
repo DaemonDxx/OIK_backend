@@ -13,5 +13,6 @@ export class CreatePointDTO {
     readonly deviceNumber: string;
     readonly capacity: number;
     readonly lastIndication: string;
-
+    readonly status: boolean;
+    readonly comment: string;
 }

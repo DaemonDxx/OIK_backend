@@ -9,5 +9,6 @@ export interface TMessage extends Document {
   readonly toPhone: string;
   readonly number: number;
   readonly point: any;
-
+  readonly status: boolean;
+  readonly comment: string;
 };

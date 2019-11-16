@@ -14,7 +14,7 @@ export class PointService {
         return point.save();
     }
 
-    async addTMessage(tMessage: TMessage): Promise<Point> {
+    async saveTMessageInPoint(tMessage: TMessage): Promise<Point> {
         const point = await this.pointModel.findOne({_id: tMessage.point});
         point.tMessage = tMessage;
         return await point.save();

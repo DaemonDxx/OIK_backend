@@ -1,4 +1,4 @@
-import {Controller, Post, Res, Body, NotFoundException, HttpStatus} from '@nestjs/common';
+import {Controller, Post, Res, Body, NotFoundException, HttpStatus, Get} from '@nestjs/common';
 import {CreatePointDTO} from './point.dto';
 import {PointService} from './point.service';
 
@@ -17,4 +17,5 @@ export class PointController {
                 point,
             });
         }
+
 }
