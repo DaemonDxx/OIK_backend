@@ -3,7 +3,6 @@ import {InjectModel} from '@nestjs/mongoose';
 import {Model, Schema} from 'mongoose';
 import {Point, TMessage} from '../Interfaces/index';
 import {CreatePointDTO} from './point.dto';
-import { FilterDto } from './filter.dto';
 
 @Injectable()
 export class PointService {
