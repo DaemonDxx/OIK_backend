@@ -1,17 +1,21 @@
 import {InjectModel} from '@nestjs/mongoose';
 import {Injectable} from '@nestjs/common';
-import {TMessage} from './tMessage.interface';
+import {TMessage} from '../Interfaces/tMessage.interface';
 import {CreateTMessageDto} from './tMessage.dto';
 import {Model} from 'mongoose';
+import { PointService } from '../PointModule/point.service';
+import { Point } from '../Interfaces';
 
 @Injectable()
 export class TelephoneMessageService {
 
-  constructor(@InjectModel('TMessage') private readonly tMessageModel: Model<TMessage>) {}
+  constructor(@InjectModel('TMessage') private readonly tMessageModel: Model<TMessage>,
+              private pointService: PointService) {}
 
-  async createTMessage(createTMessageDTO: CreateTMessageDto): Promise<TMessage> {
-    const tMessage = await this.tMessageModel(createTMessageDTO);
-    return tMessage.save();
+  async createTMessage(createTMessageDTO: CreateTMessageDto): Promise<Point> {
+    const tMessage = await this.tMessageModel(createTMessageDTO).save();
+    const point = await this.pointService.addTMessage(tMessage);
+    return point;
   }
 
 }

@@ -13,5 +13,5 @@ export interface Point extends Document {
     readonly deviceNumber: string;
     readonly capacity: number;
     readonly lastIndication: string;
-
+    readonly tMessage: any,
 }

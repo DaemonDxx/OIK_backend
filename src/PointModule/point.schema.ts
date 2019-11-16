@@ -15,5 +15,6 @@ export const PointSchema = new mongoose.Schema({
     deviceNumber: String,
     capacity: Number,
     lastIndication: String,
+    tMessage: {type: mongoose.Types.ObjectId, ref: 'TMessage'},
 
 });
