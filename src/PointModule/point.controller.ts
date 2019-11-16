@@ -7,7 +7,9 @@ export class PointController {
 
         constructor(private pointService: PointService) {}
 
-        @Post('/point')
+        // TODO: - Добавить обработку ситуации, когда поиск без результатов
+
+        @Post('/PointModule')
         async createPoint(@Res() res, @Body() createPointDTO: CreatePointDTO) {
             const point = await this.pointService.createPoint(createPointDTO);
             return res.status(HttpStatus.OK).json({

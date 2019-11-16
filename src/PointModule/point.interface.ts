@@ -1,4 +1,7 @@
-export class CreatePointDTO {
+import {Documnet} from 'mongoose';
+
+// TODO: - Внести те же изменения, что и в DTO
+export interface Point extends Documnet {
 
     readonly pointNumber: string;
     readonly name: string;

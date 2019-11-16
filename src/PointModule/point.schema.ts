@@ -1,5 +1,8 @@
 import * as mongoose from 'mongoose';
 
+// TODO: - Добавить поле "Наименование объекта"
+//       - Изменить тип date на дату
+//       - Добавить поле telephoneMessage
 export const PointSchema = new mongoose.Schema({
 
     pointNumber: String,

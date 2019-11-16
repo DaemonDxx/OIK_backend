@@ -1,6 +1,7 @@
-import {Documnet} from 'mongoose';
+// TODO: - Добавить проверку типов
+//       - Добавить проверку на пустые поля
 
-export interface Point extends Documnet {
+export class CreatePointDTO {
 
     readonly pointNumber: string;
     readonly name: string;
