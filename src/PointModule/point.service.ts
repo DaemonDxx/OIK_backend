@@ -24,7 +24,7 @@ export class PointService {
     async getPoints(days: Date[]): Promise<[Point]> {
         const points = await this.pointModel.find({
            date: {$in: days},
-        });
+        }).populate('tMessage');
         return points;
     }
 }
