@@ -1,6 +1,3 @@
-// TODO: - Добавить проверку типов
-//       - Добавить проверку на пустые поля
-
 import { IsDate, IsDefined, IsNumber } from 'class-validator';
 
 export class CreatePointDTO {
