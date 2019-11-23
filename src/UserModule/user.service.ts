@@ -2,9 +2,8 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { User } from '../Interfaces/user.interface';
 import { Model } from 'mongoose';
-import { CreateUserDTO } from './auth.createUserDTO';
+import { CreateUserDTO } from './user.createUserDTO';
 import { UserSetting } from '../Interfaces/userSetting.interface';
-
 
 @Injectable()
 export class UserService {
