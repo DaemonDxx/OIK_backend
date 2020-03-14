@@ -14,7 +14,6 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
   }
 
   async validate(login: string, password: string): Promise<any> {
-    console.log('Validate');
     const user = await this.authService.validateUser(login, password);
     if (!user) {
       throw new BadRequestException('Неверный логин или пароль');
