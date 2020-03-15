@@ -28,11 +28,8 @@ export class CreatePointDTO {
     @IsDefined()
     readonly deviceNumber: string;
 
-    @IsNumber()
-    @IsDefined()
     readonly capacity: number;
 
-    @IsDefined()
     readonly lastIndication: string;
 
     @IsDefined()
