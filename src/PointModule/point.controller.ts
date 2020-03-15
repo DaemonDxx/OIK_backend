@@ -23,7 +23,7 @@ export class PointController {
         }
 
         @UseGuards(AuthGuard('jwt'))
-        @Get('/Point')
+        @Get('/Points')
         async getPointsInDays(@Res() res, @Body() filter: FilterDto) {
           const date = new Date(filter.day);
           const points = await this.pointService.getPoints(date);
