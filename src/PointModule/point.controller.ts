@@ -1,4 +1,4 @@
-import { Controller, Post, Res, Body, NotFoundException, HttpStatus, Get, UsePipes, ValidationPipe, UseGuards } from '@nestjs/common';
+import { Controller, Post, Res, Body, NotFoundException, HttpStatus, Get, UsePipes, ValidationPipe, UseGuards, Param, Query} from '@nestjs/common';
 import {CreatePointDTO} from './point.dto';
 import {PointService} from './point.service';
 import { FilterDto } from './filter.dto';
@@ -24,8 +24,8 @@ export class PointController {
 
         @UseGuards(AuthGuard('jwt'))
         @Get('/Points')
-        async getPointsInDays(@Res() res, @Body() filter: FilterDto) {
-          const date = new Date(filter.day);
+        async getPointsInDays(@Res() res, @Query() query) {
+          const date = new Date(query.day);
           const points = await this.pointService.getPoints(date);
           res.status(HttpStatus.OK).json({
             lenght: points.length,
