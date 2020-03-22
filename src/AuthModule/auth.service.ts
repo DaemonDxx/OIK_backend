@@ -22,6 +22,7 @@ export class AuthService {
         login: user.login,
         role: user.role,
       }),
+      user,
     };
   }
 }

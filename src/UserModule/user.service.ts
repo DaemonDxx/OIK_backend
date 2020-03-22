@@ -17,7 +17,7 @@ export class UserService {
 
   async findUserByLogin(login: string): Promise<User> {
     const user = await this.user.findOne({login});
-    return user;
+    return user.toObject();
   }
 
 }
