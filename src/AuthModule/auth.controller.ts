@@ -19,11 +19,8 @@ export class AuthController {
 
   @Post('/auth/register')
   async register(@Res() res, @Body() userDTO: CreateUserDTO) {
-    const user = await this.userService.createUser(userDTO);
-    res.status(HttpStatus.OK).json({
-      login: user.login,
-      role: user.role,
-    });
+    const {password, ...user} = await this.userService.createUser(userDTO);
+    res.status(HttpStatus.OK).json({user});
   }
 
 }

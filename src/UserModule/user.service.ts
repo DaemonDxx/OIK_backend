@@ -12,7 +12,7 @@ export class UserService {
 
   async createUser(createUserDTO: CreateUserDTO): Promise<User> {
     const user = await this.user(createUserDTO).save();
-    return user;
+    return user.toObject();
   }
 
   async findUserByLogin(login: string): Promise<User> {

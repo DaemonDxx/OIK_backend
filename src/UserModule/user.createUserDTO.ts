@@ -5,5 +5,10 @@ export class CreateUserDTO {
   readonly login: string;
   readonly password: string;
   readonly role: string;
-  readonly setting: UserSetting;
+  readonly firstName: string;
+  readonly lastName: string;
+  readonly patronymic: string;
+  readonly department: string;
+  readonly position: string;
+
 }
