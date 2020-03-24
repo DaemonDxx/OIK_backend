@@ -1,6 +1,6 @@
 import {Injectable} from '@nestjs/common';
 import {InjectModel} from '@nestjs/mongoose';
-import {Model, Schema} from 'mongoose';
+import {Model, Schema, Types} from 'mongoose';
 import {Point, TMessage} from '../Interfaces/index';
 import {CreatePointDTO} from './point.dto';
 import * as moment from 'moment';
@@ -21,7 +21,7 @@ export class PointService {
         return point.save();
     }
 
-    async getPoints(day: Date): Promise<[Point]> {
+    async getPointsByDate(day: Date): Promise<[Point]> {
         let dayFind = moment(day);
         const points = await this.pointModel.find({
             date: {
@@ -29,5 +29,10 @@ export class PointService {
             },
         });
         return points;
+    }
+
+    async getPointById(id: any): Promise<Point> {
+        const point = await this.pointModel.findById(Types.ObjectId(id));
+        return point;
     }
 }

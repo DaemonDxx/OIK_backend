@@ -8,7 +8,7 @@ export const TMessageSchema = new mongoose.Schema({
   fromPhone: String,
   toPhone: String,
   number: Number,
-  point: {type: mongoose.Schema.Types.ObjectId, ref: 'Point'},
+  points: [{type: mongoose.Schema.Types.ObjectId, ref: 'Point'}],
   status: {type: Boolean, default: false},
   comment: String,
 

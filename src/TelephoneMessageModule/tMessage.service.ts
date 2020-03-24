@@ -18,4 +18,12 @@ export class TelephoneMessageService {
     return point.tMessage;
   }
 
+  async getTelegramByPointID(id: any): Promise<TMessage> {
+    const point = await this.pointService.getPointById(id);
+    const telegram = await this.tMessageModel.findOne(
+      {points: {$elemMatch: point}},
+    )
+    return telegram;
+  }
+
 }

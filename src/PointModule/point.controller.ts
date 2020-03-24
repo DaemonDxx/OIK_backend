@@ -26,7 +26,7 @@ export class PointController {
         @Get('/Points')
         async getPointsInDays(@Res() res, @Query() query) {
           const date = new Date(query.day);
-          const points = await this.pointService.getPoints(date);
+          const points = await this.pointService.getPointsByDate(date);
           res.status(HttpStatus.OK).json({
             lenght: points.length,
             points,
