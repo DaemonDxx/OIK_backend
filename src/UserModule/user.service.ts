@@ -26,7 +26,7 @@ export class UserService {
   async findStaffByDepartment(department) {
     const staff = await this.user.find({department});
     return staff.map(e => {
-      const {password, ...user} = e.toObject();
+      const {password, login, role, ...user} = e.toObject();
       return user;
     });
   }
